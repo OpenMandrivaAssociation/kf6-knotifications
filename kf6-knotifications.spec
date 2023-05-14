@@ -29,6 +29,8 @@ BuildRequires: cmake(Qt6QuickTest)
 BuildRequires: cmake(KF6WindowSystem)
 BuildRequires: cmake(KF6Config)
 BuildRequires: cmake(KF6CoreAddons)
+BuildRequires: cmake(Phonon4Qt6)
+BuildRequires: pkgconfig(libcanberra)
 Requires: %{libname} = %{EVRD}
 
 %description
