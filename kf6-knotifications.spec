@@ -30,6 +30,8 @@ BuildRequires: cmake(KF6WindowSystem)
 BuildRequires: cmake(KF6Config)
 BuildRequires: cmake(KF6CoreAddons)
 BuildRequires: cmake(Phonon4Qt6)
+BuildRequires: cmake(Qt6Quick)
+BuildRequires: pkgconfig(dbusmenu-qt6)
 BuildRequires: pkgconfig(libcanberra)
 Requires: %{libname} = %{EVRD}
 
