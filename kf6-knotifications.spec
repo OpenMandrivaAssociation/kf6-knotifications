@@ -2,6 +2,9 @@
 %define devname %mklibname KF6Notifications -d
 %define git 20230513
 
+# SnoreToast is Windows only, but referenced by cmake files
+%define __requires_exclude .*snoretoast.*
+
 Name: kf6-knotifications
 Version: 5.240.0
 Release: %{?git:0.%{git}.}1
