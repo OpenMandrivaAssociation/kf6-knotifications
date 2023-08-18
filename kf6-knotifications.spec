@@ -86,4 +86,4 @@ KNotification is used to notify the user of an event.
 
 %files -n %{libname}
 %{_libdir}/libKF6Notifications.so*
-%{_qtdir}/qml/org/kde/notification
+%{_qtdir}/qml/org/kde/notifications/
