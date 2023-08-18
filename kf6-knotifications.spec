@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Notifications
 %define devname %mklibname KF6Notifications -d
-%define git 20230811
+%define git 20230818
 
 # SnoreToast is Windows only, but referenced by cmake files
 %define __requires_exclude .*snoretoast.*
@@ -77,7 +77,6 @@ KNotification is used to notify the user of an event.
 
 %files -f %{name}.lang
 %{_datadir}/qlogging-categories6/knotifications.*
-%{_datadir}/dbus-1/interfaces/*.xml
 
 %files -n %{devname}
 %{_includedir}/KF6/KNotifications
