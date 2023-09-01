@@ -1,6 +1,6 @@
 %define libname %mklibname KF6Notifications
 %define devname %mklibname KF6Notifications -d
-%define git 20230825
+%define git 20230901
 
 # SnoreToast is Windows only, but referenced by cmake files
 %define __requires_exclude .*snoretoast.*
