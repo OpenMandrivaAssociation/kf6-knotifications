@@ -1,14 +1,20 @@
+%define stable %([ "$(echo %{version} |cut -d. -f2)" -ge 80 -o "$(echo %{version} |cut -d. -f3)" -ge 80 ] && echo -n un; echo -n stable)
+
 %define libname %mklibname KF6Notifications
 %define devname %mklibname KF6Notifications -d
-%define git 20231103
+#define git 20231103
 
 # SnoreToast is Windows only, but referenced by cmake files
 %define __requires_exclude .*snoretoast.*
 
 Name: kf6-knotifications
-Version: 5.240.0
+Version: 5.245.0
 Release: %{?git:0.%{git}.}1
+%if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/knotifications/-/archive/master/knotifications-master.tar.bz2#/knotifications-%{git}.tar.bz2
+%else
+Source0: https://download.kde.org/%{stable}/frameworks/%{version}/knotifications-%{version}.tar.xz
+%endif
 Summary: KNotification is used to notify the user of an event
 URL: https://invent.kde.org/frameworks/knotifications
 License: CC0-1.0 LGPL-2.0+ LGPL-2.1 LGPL-3.0
