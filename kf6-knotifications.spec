@@ -9,7 +9,7 @@
 %define __requires_exclude .*snoretoast.*
 
 Name: kf6-knotifications
-Version: 6.10.0
+Version: 6.11.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/knotifications/-/archive/master/knotifications-master.tar.bz2#/knotifications-%{git}.tar.bz2
@@ -23,6 +23,7 @@ Group: System/Libraries
 BuildRequires: cmake
 BuildRequires: cmake(ECM)
 BuildRequires: python
+BuildRequires: python%{pyver}dist(build)
 BuildRequires: cmake(Qt6DBusTools)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
@@ -93,3 +94,4 @@ KNotification is used to notify the user of an event.
 %files -n %{libname}
 %{_libdir}/libKF6Notifications.so*
 %{_qtdir}/qml/org/kde/notification/
+%{_libdir}/python*/site-packages/KNotifications.cpython-*.so
