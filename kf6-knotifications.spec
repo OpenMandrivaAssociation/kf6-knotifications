@@ -24,6 +24,9 @@ BuildRequires: cmake
 BuildRequires: cmake(ECM)
 BuildRequires: python
 BuildRequires: python%{pyver}dist(build)
+BuildRequires: pkgconfig(python3)
+BuildRequires: cmake(Shiboken6)
+BuildRequires: cmake(PySide6)
 BuildRequires: cmake(Qt6DBusTools)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Network)
@@ -67,6 +70,14 @@ Development files (Headers etc.) for %{name}.
 
 KNotification is used to notify the user of an event.
 
+%package -n python-knotifications
+Summary: Python bindings to knotifications
+Group: Development/Python
+Requires: %{libname} = %{EVRD}
+
+%description -n python-knotifications
+Python bindings to knotifications
+
 %prep
 %autosetup -p1 -n knotifications-%{?git:master}%{!?git:%{version}}
 %cmake \
@@ -94,4 +105,6 @@ KNotification is used to notify the user of an event.
 %files -n %{libname}
 %{_libdir}/libKF6Notifications.so*
 %{_qtdir}/qml/org/kde/notification/
+
+%files -n python-knotifications
 %{_libdir}/python*/site-packages/KNotifications.cpython-*.so
