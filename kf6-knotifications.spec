@@ -9,7 +9,7 @@
 %define __requires_exclude .*snoretoast.*
 
 Name: kf6-knotifications
-Version: 6.14.0
+Version: 6.15.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/knotifications/-/archive/master/knotifications-master.tar.bz2#/knotifications-%{git}.tar.bz2
@@ -100,7 +100,6 @@ Python bindings to knotifications
 %files -n %{devname}
 %{_includedir}/KF6/KNotifications
 %{_libdir}/cmake/KF6Notifications
-%{_qtdir}/doc/KF6Notifications.*
 
 %files -n %{libname}
 %{_libdir}/libKF6Notifications.so*
