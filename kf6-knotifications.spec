@@ -9,7 +9,7 @@
 %define __requires_exclude .*snoretoast.*
 
 Name: kf6-knotifications
-Version: 6.28.0
+Version: 6.29.0
 Release: %{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0: https://invent.kde.org/frameworks/knotifications/-/archive/master/knotifications-master.tar.bz2#/knotifications-%{git}.tar.bz2
@@ -92,9 +92,7 @@ Python bindings to knotifications
 %install
 %ninja_install -C build
 
-%find_lang %{name} --all-name --with-qt --with-html
-
-%files -f %{name}.lang
+%files
 %{_datadir}/qlogging-categories6/knotifications.*
 
 %files -n %{devname}
